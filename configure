@@ -1,0 +1,28 @@
+###############################################################
+# bochsrc.bxrc file for Finix.
+###############################################################
+ 
+# how much memory the emulated machine will have
+megs: 32
+ 
+# filename of ROM images
+# El BIOS se ha modificado, la dirección no se puede agregar, se puede inferir de acuerdo con el tamaño del archivo, por ejemplo, la dirección de Riga debe coincidir con el tamaño del archivo
+romimage: file=$BXSHARE/BIOS-bochs-latest
+vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+ 
+# what disk images will be used 
+ # Configurar el nombre de la imagen
+floppya: 1_44=Finix.IMG, status=inserted
+ 
+# choose the boot disk.
+boot: a
+ 
+# where do we send log messages?
+log: bochsout.txt
+ 
+# disable the mouse, since Finix is text only
+mouse: enabled=0
+ 
+# enable key mapping, using US layout as default.
+ # La asignación de teclado también ha cambiado
+keyboard: keymap=$BXSHARE/keymaps/x11-pc-us.map
